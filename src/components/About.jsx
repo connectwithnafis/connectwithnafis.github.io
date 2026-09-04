@@ -76,7 +76,7 @@ export default function About() {
         </p>
       </Reveal>
 
-      {/* System-design chips */}
+      {/* System-design chips — hidden for now (uncomment to re-enable)
       <Reveal delay={0.05}>
         <div className="mt-6">
           <p className="mb-3 font-mono text-xs uppercase tracking-widest text-slate-400">
@@ -95,6 +95,7 @@ export default function About() {
           </div>
         </div>
       </Reveal>
+      */}
 
       {/* Tech marquee */}
       <Reveal delay={0.1}>
