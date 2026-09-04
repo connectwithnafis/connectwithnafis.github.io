@@ -1,0 +1,11 @@
+name = "nahid-portfolio-chat"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+# Optional configuration — uncomment and edit as needed.
+# [vars]
+# GEMINI_MODEL   = "gemini-2.0-flash"                    # any free Gemini model id
+# ALLOWED_ORIGIN = "https://connectwithnafis.github.io"  # lock CORS to your site
+
+# Secret (do NOT put it here) — set it once with:
+#   wrangler secret put GEMINI_API_KEY

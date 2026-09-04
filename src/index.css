@@ -1,0 +1,110 @@
+@import 'tailwindcss';
+
+/* Class-based dark mode: toggling `.dark` on <html> flips every dark: variant */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', ui-sans-serif, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  /* Brand accent — teal / emerald scale */
+  --color-brand-50: #ecfdf5;
+  --color-brand-100: #d1fae5;
+  --color-brand-200: #a7f3d0;
+  --color-brand-300: #6ee7b7;
+  --color-brand-400: #34d399;
+  --color-brand-500: #10b981;
+  --color-brand-600: #059669;
+  --color-brand-700: #047857;
+  --color-brand-800: #065f46;
+  --color-brand-900: #064e3b;
+  --color-brand-950: #022c22;
+
+  /* Secondary accent — cyan */
+  --color-accent2-400: #22d3ee;
+  --color-accent2-500: #06b6d4;
+  --color-accent2-600: #0891b2;
+
+  --animate-marquee: marquee 32s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5rem; /* offset for sticky navbar on anchor jumps */
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-700 antialiased;
+    @apply dark:bg-slate-950 dark:text-slate-300;
+    font-family: var(--font-sans);
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  ::selection {
+    @apply bg-brand-500/30 text-slate-900 dark:text-white;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-100 dark:bg-slate-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full border-2 border-solid border-slate-100 bg-slate-300 dark:border-slate-900 dark:bg-slate-700;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-brand-500 dark:bg-brand-500;
+  }
+}
+
+@layer components {
+  /* Gradient text used for names / highlights */
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-500 via-brand-400 to-accent2-500 bg-clip-text text-transparent;
+  }
+
+  /* Frosted-glass surface (cards, navbar).
+     backdrop-blur-md (not -xl) keeps scrolling smooth — heavy blur over
+     the aurora background is the main cause of jank on lower-end devices. */
+  .glass {
+    @apply border border-slate-200/70 bg-white/80 backdrop-blur-md;
+    @apply dark:border-white/10 dark:bg-white/[0.04];
+  }
+
+  /* Section vertical rhythm */
+  .section {
+    @apply mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-28;
+  }
+
+  /* Small pill / tag */
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1 text-sm font-medium text-slate-600;
+    @apply dark:border-white/10 dark:bg-white/5 dark:text-slate-300;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
