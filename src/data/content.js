@@ -10,7 +10,7 @@ export const profile = {
   roles: [
     'Software Engineer',
     'Backend Architect',
-    'Clean Architecture Advocate',
+    'Systems Designer',
     'Cloud-Native Builder',
   ],
   location: 'Dhaka, Bangladesh',
@@ -25,9 +25,11 @@ export const profile = {
   // user pages (/) and project pages (/repo/).
   resumeUrl: import.meta.env.BASE_URL + 'MD_Nahid_Uddin.pdf',
   tagline:
-    'I build enterprise-grade reporting engines and modernize legacy backends into scalable, cloud-native systems.',
+    'I turn complex business requirements into clean, scalable backend systems — from enterprise reporting engines to cloud-native data pipelines.',
   summary:
-    'Performance-driven Software Engineer specialized in building enterprise-grade reporting engines and modernizing legacy backend architectures. Expert in Clean Architecture, DDD, and CQRS patterns using NestJS and PostgreSQL. Proven track record in orchestrating complex ETL migrations and designing scalable, secure cloud-native solutions.',
+    "Backend-focused Software Engineer specializing in enterprise reporting engines and modernizing legacy systems with Clean Architecture, DDD & CQRS — built on NestJS, .NET and PostgreSQL. Currently Software Engineer II at Innospace Infotech, grown from junior engineer to architecting platforms and leading Oracle→PostgreSQL cloud migrations.",
+  // Short "what I'm doing now" line shown in the sidebar
+  now: 'Architecting a NestJS BI reporting engine & deepening AWS + system design.',
 }
 
 export const stats = [
@@ -99,6 +101,16 @@ export const techStack = [
   'TypeORM',
   'CQRS',
   'DDD',
+]
+
+// System-design concepts — signals depth beyond frameworks
+export const systemDesign = [
+  'Scalability',
+  'Reliability',
+  'Caching',
+  'Message Queues',
+  'Observability',
+  'Fault Tolerance',
 ]
 
 // Grouped by company (LinkedIn-style). Roles are ordered newest → oldest.
@@ -236,6 +248,31 @@ export const certifications = [
     name: 'Web Development Bootcamp',
     issuer: 'Udemy',
     period: 'Jul 2022 – Sep 2023',
+  },
+]
+
+// Placeholder recommendations — replace quotes/names with real ones when you have them.
+export const testimonials = [
+  {
+    quote:
+      'Nahid has a rare talent for turning tangled legacy systems into clean, well-architected services. He owned our reporting engine from design to delivery.',
+    name: 'Team Lead',
+    role: 'Engineering Manager',
+    company: 'Innospace Infotech',
+  },
+  {
+    quote:
+      'One of the most dependable backend engineers I’ve worked with — thoughtful about architecture and relentless about getting the details right.',
+    name: 'Senior Colleague',
+    role: 'Senior Software Engineer',
+    company: 'Innospace Infotech',
+  },
+  {
+    quote:
+      'He led our Oracle-to-PostgreSQL migration calmly and cleanly — zero data loss and a pipeline the whole team now trusts.',
+    name: 'Product Owner',
+    role: 'Product Manager',
+    company: 'Innospace Infotech',
   },
 ]
 

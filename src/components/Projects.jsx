@@ -13,7 +13,7 @@ export default function Projects() {
         lead="A few systems I've architected and shipped — from BI reporting engines to cloud ETL pipelines and cross-platform ERP apps."
       />
 
-      <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
         {projects.map((project, i) => (
           <Reveal key={project.name} delay={(i % 3) * 0.08}>
             <SpotlightCard
@@ -22,7 +22,7 @@ export default function Projects() {
               }`}
             >
               <div className="flex items-center justify-between">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500/15 to-accent2-500/15 text-brand-600 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3 dark:text-brand-400">
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500/15 to-accent2-500/15 text-brand-600 transition-transform duration-300 group-hover:scale-105 dark:text-brand-400">
                   <Folder size={20} />
                 </span>
                 <div className="flex items-center gap-2">

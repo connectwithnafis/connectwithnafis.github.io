@@ -90,7 +90,7 @@ export default function ChatPanel({ onClose }) {
           <Code2 size={20} />
         </span>
         <div className="flex-1">
-          <p className="font-display text-sm font-semibold leading-tight">Nahid's AI Assistant</p>
+          <p className="font-display text-sm font-semibold leading-tight">Ask me anything</p>
           <p className="flex items-center gap-1.5 text-xs text-white/80">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-300 opacity-75" />
@@ -142,7 +142,7 @@ export default function ChatPanel({ onClose }) {
           ref={inputRef}
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask about Nahid..."
+          placeholder="Ask me anything..."
           className="min-w-0 flex-1 rounded-full border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-800 outline-none transition-colors focus:border-brand-400 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:placeholder:text-slate-500"
         />
         <button

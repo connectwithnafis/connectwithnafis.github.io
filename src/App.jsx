@@ -2,13 +2,13 @@ import { lazy, Suspense } from 'react'
 import { motion, useScroll, useSpring } from 'framer-motion'
 import { useTheme } from './hooks/useTheme'
 import Background from './components/Background'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
+import Sidebar from './components/Sidebar'
 import About from './components/About'
 import Skills from './components/Skills'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Education from './components/Education'
+import Testimonials from './components/Testimonials'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -29,19 +29,22 @@ export default function App() {
       />
 
       <Background />
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
 
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Education />
-        <Contact />
-      </main>
+      {/* Two-column shell: sticky sidebar + scrolling content */}
+      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:flex lg:gap-16 lg:px-12">
+        <Sidebar theme={theme} toggleTheme={toggleTheme} />
 
-      <Footer />
+        <main id="content" className="lg:w-[58%] lg:py-24">
+          <About />
+          <Skills />
+          <Experience />
+          <Projects />
+          <Education />
+          <Testimonials />
+          <Contact />
+          <Footer />
+        </main>
+      </div>
 
       {/* Floating AI assistant + WhatsApp widgets (lazy-loaded) */}
       <Suspense fallback={null}>

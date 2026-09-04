@@ -1,38 +1,35 @@
 import Reveal from './Reveal'
 
 /**
- * Consistent section header: small mono eyebrow + large display title + optional lead.
+ * Refined section header: a small mono eyebrow with a hairline rule, a tight
+ * display title, and an optional lead. Editorial and understated.
  */
 export default function SectionHeading({ eyebrow, title, lead, align = 'left' }) {
   const centered = align === 'center'
   return (
-    <div className={centered ? 'mx-auto max-w-2xl text-center' : 'max-w-2xl'}>
+    <div className={centered ? 'mx-auto max-w-2xl text-center' : ''}>
       {eyebrow && (
         <Reveal>
-          <span className="font-mono text-sm font-medium tracking-widest text-brand-600 uppercase dark:text-brand-400">
-            {eyebrow}
-          </span>
+          <div className={`mb-4 flex items-center gap-4 ${centered ? 'justify-center' : ''}`}>
+            <span className="font-mono text-xs font-semibold tracking-[0.2em] text-brand-600 uppercase dark:text-brand-400">
+              {eyebrow}
+            </span>
+            {!centered && <span className="h-px flex-1 bg-slate-200 dark:bg-white/10" />}
+          </div>
         </Reveal>
       )}
       <Reveal delay={0.05}>
-        <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
+        <h2 className="font-display text-2xl font-bold tracking-tight text-slate-900 sm:text-[1.7rem] dark:text-white">
           {title}
         </h2>
       </Reveal>
       {lead && (
         <Reveal delay={0.1}>
-          <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-400">
+          <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-slate-600 dark:text-slate-400">
             {lead}
           </p>
         </Reveal>
       )}
-      <Reveal delay={0.15}>
-        <div
-          className={`mt-6 h-1 w-16 rounded-full bg-gradient-to-r from-brand-500 to-accent2-500 ${
-            centered ? 'mx-auto' : ''
-          }`}
-        />
-      </Reveal>
     </div>
   )
 }

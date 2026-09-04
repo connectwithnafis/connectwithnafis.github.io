@@ -5,26 +5,30 @@
 
 @theme {
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-display: 'Space Grotesk', 'Inter', ui-sans-serif, sans-serif;
+  --font-display: 'Bricolage Grotesque', 'Inter', ui-sans-serif, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
 
-  /* Brand accent — teal / emerald scale */
-  --color-brand-50: #ecfdf5;
-  --color-brand-100: #d1fae5;
-  --color-brand-200: #a7f3d0;
-  --color-brand-300: #6ee7b7;
-  --color-brand-400: #34d399;
-  --color-brand-500: #10b981;
-  --color-brand-600: #059669;
-  --color-brand-700: #047857;
-  --color-brand-800: #065f46;
-  --color-brand-900: #064e3b;
-  --color-brand-950: #022c22;
+  /* Brand accent — blue scale */
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-200: #bfdbfe;
+  --color-brand-300: #93c5fd;
+  --color-brand-400: #60a5fa;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-800: #1e40af;
+  --color-brand-900: #1e3a8a;
+  --color-brand-950: #172554;
 
-  /* Secondary accent — cyan */
-  --color-accent2-400: #22d3ee;
-  --color-accent2-500: #06b6d4;
-  --color-accent2-600: #0891b2;
+  /* Secondary accent — sky */
+  --color-accent2-400: #38bdf8;
+  --color-accent2-500: #0ea5e9;
+  --color-accent2-600: #0284c7;
+
+  /* Deep-navy dark surfaces (override slate so all dark:bg-slate-9xx match) */
+  --color-slate-900: #111a2f;
+  --color-slate-950: #0a0f1f;
 
   --animate-marquee: marquee 32s linear infinite;
 }
@@ -72,9 +76,10 @@
 }
 
 @layer components {
-  /* Gradient text used for names / highlights */
+  /* Gradient text used for names / highlights — indigo → violet → fuchsia */
   .text-gradient {
-    @apply bg-gradient-to-r from-brand-500 via-brand-400 to-accent2-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-indigo-500 via-brand-500 to-accent2-500 bg-clip-text text-transparent;
+    @apply dark:from-indigo-400 dark:via-brand-400 dark:to-accent2-400;
   }
 
   /* Frosted-glass surface (cards, navbar).
@@ -85,9 +90,10 @@
     @apply dark:border-white/10 dark:bg-white/[0.04];
   }
 
-  /* Section vertical rhythm */
+  /* Section vertical rhythm (width is controlled by the layout column) */
   .section {
-    @apply mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-28;
+    @apply w-full py-12 sm:py-16;
+    scroll-margin-top: 6rem;
   }
 
   /* Small pill / tag */

@@ -2,14 +2,14 @@ import { useRef } from 'react'
 import { motion } from 'framer-motion'
 
 /**
- * Card wrapper with a smooth mouse-following spotlight glow + springy lift on hover.
- * Tracks the cursor via CSS custom properties (--mx / --my) so the glow follows it.
+ * Card wrapper with a subtle mouse-following spotlight + gentle lift on hover.
+ * Kept restrained on purpose — a soft accent, not a glow bomb.
  */
 export default function SpotlightCard({
   children,
   className = '',
-  lift = -6,
-  glow = 'rgba(16,185,129,0.16)',
+  lift = -4,
+  glow = 'rgba(59,130,246,0.10)',
   ...props
 }) {
   const ref = useRef(null)
@@ -27,19 +27,17 @@ export default function SpotlightCard({
       ref={ref}
       onMouseMove={handleMove}
       whileHover={{ y: lift }}
-      transition={{ type: 'spring', stiffness: 260, damping: 18 }}
+      transition={{ type: 'spring', stiffness: 200, damping: 24 }}
       className={`group/spot relative overflow-hidden ${className}`}
       {...props}
     >
-      {/* Spotlight layer */}
       <span
         aria-hidden
         className="pointer-events-none absolute inset-0 z-0 opacity-0 transition-opacity duration-300 group-hover/spot:opacity-100"
         style={{
-          background: `radial-gradient(340px circle at var(--mx, 50%) var(--my, 50%), ${glow}, transparent 65%)`,
+          background: `radial-gradient(300px circle at var(--mx, 50%) var(--my, 50%), ${glow}, transparent 60%)`,
         }}
       />
-      {/* Content sits above the glow */}
       <div className="relative z-10 h-full">{children}</div>
     </motion.div>
   )

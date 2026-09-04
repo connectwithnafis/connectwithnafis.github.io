@@ -37,7 +37,7 @@ export default function FloatingDock() {
 
         {/* AI Assistant */}
         <Fab
-          label="Ask Nahid's AI"
+          label="Ask me anything"
           onClick={() => toggle('chat')}
           active={open === 'chat'}
           className="bg-gradient-to-br from-brand-500 to-accent2-500 shadow-brand-500/40"
