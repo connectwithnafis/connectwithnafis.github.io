@@ -67,7 +67,7 @@ Set these in `wrangler.toml` under `[vars]` (or as secrets):
 
 | Variable         | Default             | Purpose                                   |
 | ---------------- | ------------------- | ----------------------------------------- |
-| `GEMINI_MODEL`   | `gemini-2.0-flash`  | Any free Gemini model id                  |
+| `GEMINI_MODEL`   | `gemini-3.6-flash`  | Any current Gemini model id               |
 | `ALLOWED_ORIGIN` | `*`                 | Lock CORS to your site (recommended)      |
 
 To restrict CORS to your deployed site, set:
