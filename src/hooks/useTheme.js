@@ -7,16 +7,12 @@ import { useCallback, useEffect, useState } from 'react'
  * - Persists the choice to localStorage and toggles the `.dark` class on <html>.
  */
 export function useTheme() {
-  const [theme, setTheme] = useState(() => {
-    if (typeof window === 'undefined') return 'light'
-    // Default to LIGHT; only honour an explicit stored choice.
-    return localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'
-  })
+  // Always start in LIGHT on every load. Dark is an in-session, opt-in
+  // toggle only — never auto-restored — so the site always opens light/white.
+  const [theme, setTheme] = useState('light')
 
   useEffect(() => {
-    const root = document.documentElement
-    root.classList.toggle('dark', theme === 'dark')
-    localStorage.setItem('theme', theme)
+    document.documentElement.classList.toggle('dark', theme === 'dark')
   }, [theme])
 
   const toggleTheme = useCallback(

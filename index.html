@@ -21,13 +21,11 @@
       content="Backend-focused Software Engineer building scalable, cloud-native systems with NestJS, .NET & PostgreSQL."
     />
 
-    <!-- Prevent theme flash: default is LIGHT; only go dark if explicitly chosen -->
+    <!-- Theme always defaults to light; clear any stale saved preference. -->
     <script>
       (function () {
         try {
-          if (localStorage.getItem('theme') === 'dark') {
-            document.documentElement.classList.add('dark');
-          }
+          localStorage.removeItem('theme');
         } catch (e) {}
       })();
     </script>
