@@ -101,6 +101,7 @@ export const techStack = [
   'TypeORM',
   'CQRS',
   'DDD',
+  'CDC',
 ]
 
 // System-design concepts — signals depth beyond frameworks
@@ -129,9 +130,9 @@ export const experience = [
           'Enterprise Reporting Engine — Architect & Core Developer: Developed a reporting engine boilerplate using NestJS and Clean Architecture principles.',
           'DDD Implementation: Engineered a decoupled system with distinct Domain, Application, Infrastructure, and API layers to ensure maximum maintainability.',
           'BI-Ready Engine: Designed the core for advanced data aggregation, analytics, and future Power BI REST API integrations.',
-          'Containerization: Standardized development and deployment using Docker and Docker Compose for multi-tenant data layers.',
           'Field-Force Tracking Platform: Architected a Modular Monolith with CQRS and ACID-compliant transaction management, featuring JWT access/refresh token rotation and RBAC for field-force tracking.',
           'ETL Migration Lead: Spearheaded automated daily synchronization from Oracle 11g to PostgreSQL using AWS EC2, Docker, Python, AWS S3 and Lambda.',
+          'Real-Time CDC Engine: Built a near-real-time change data capture pipeline keeping PostgreSQL in sync with Oracle 11g at transaction-level consistency.',
         ],
       },
       {
@@ -141,6 +142,7 @@ export const experience = [
           'Architected efficient RESTful APIs in ASP.NET Core, significantly optimizing internal business workflows and system interactions.',
           'Led the migration of legacy applications to modern frameworks and cloud-based solutions, improving system scalability and long-term maintainability.',
           'Optimized server deployments and security configurations on IIS, ensuring peak performance for production web applications.',
+          'Containerization: Standardized development and deployment using Docker and Docker Compose for consistent, reproducible environments.',
         ],
       },
       {
@@ -196,8 +198,17 @@ export const projects = [
     tag: 'Data / Cloud',
     year: '2026',
     description:
-      'Led an automated daily synchronization pipeline migrating data from Oracle 11g to PostgreSQL, orchestrated across AWS EC2, Lambda and S3 with Python and Docker.',
+      'Built the automated bulk-migration pipeline that moves data from a legacy Oracle 11g database into PostgreSQL, orchestrated across AWS EC2, Lambda and S3 with Python and Docker.',
     highlights: ['AWS EC2', 'AWS Lambda', 'AWS S3', 'Python', 'Docker'],
+    featured: true,
+  },
+  {
+    name: 'Real-Time CDC Engine',
+    tag: 'Data Engineering',
+    year: '2026',
+    description:
+      'A change data capture system that keeps PostgreSQL in sync with a legacy Oracle 11g source within seconds of every insert, update and delete. Trigger-based capture with transaction-level consistency — one source transaction becomes exactly one PostgreSQL commit — plus automatic reconnection and tiered retry/backoff, so nothing is ever missed or half-applied.',
+    highlights: ['Python', 'Oracle 11g', 'PostgreSQL', 'CDC', 'CloudWatch'],
     featured: true,
   },
   {
