@@ -23,7 +23,7 @@ export const profile = {
   },
   // Résumé PDF lives in /public. BASE_URL keeps the link correct on both
   // user pages (/) and project pages (/repo/).
-  resumeUrl: import.meta.env.BASE_URL + 'MD_Nahid_Uddin.pdf',
+  resumeUrl: import.meta.env.BASE_URL + 'MD_Nahid_Uddin_Resume.pdf',
   tagline:
     'I turn complex business requirements into clean, scalable backend systems — from enterprise reporting engines to cloud-native data pipelines.',
   summary:

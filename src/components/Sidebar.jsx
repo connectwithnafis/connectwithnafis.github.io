@@ -187,7 +187,7 @@ export default function Sidebar({ theme, toggleTheme }) {
         {profile.resumeUrl && (
           <a
             href={profile.resumeUrl}
-            download="MD_Nahid_Uddin_CV.pdf"
+            download="MD_Nahid_Uddin_Resume.pdf"
             target="_blank"
             rel="noreferrer"
             className="ml-1 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white/60 px-4 py-2 text-sm font-semibold text-slate-800 transition-colors hover:border-brand-400 hover:text-brand-600 dark:border-white/15 dark:bg-white/5 dark:text-slate-200 dark:hover:text-brand-400"
